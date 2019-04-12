@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://www.example.org/WeekDaySchema"
+			xmlns="http://www.example.org/WeekDaySchema"
+			elementFormDefault="qualified">
+	
+	<xs:simpleType name="daybystring">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Saturday"/>
+			<xs:enumeration value="Sunday"/>
+			<xs:enumeration value="Monday"/>
+			<xs:enumeration value="Tuseday"/>
+			<xs:enumeration value="Wednesday"/>
+			<xs:enumeration value="Thursday"/>
+			<xs:enumeration value="Friday"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="daybyno">
+		<xs:restriction base="xs:positiveInteger">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="7"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:element name="WeekDay">
+		<xs:simpleType>
+			<xs:union memberTypes="daybyno daybystring"/>
+		</xs:simpleType>
+	</xs:element>
+</xs:schema>

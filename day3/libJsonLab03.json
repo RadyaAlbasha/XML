@@ -1,0 +1,33 @@
+{
+    "library":{
+        "location":"Nasr city",
+        "description":"d",
+        "librarian":"l",
+        "books":[
+            {
+                "book":{
+                    "title":"meki",
+                    "ISBN":"1997",
+                    "Author":"radya",
+                    "preface":"p",
+                    "parts":[
+                        {
+                            "part":{
+                                "title":"t",
+                                "summary":"s",
+                                "sections":[
+                                    {
+                                        "section":{
+                                            "content":"paragraph"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+    
+}

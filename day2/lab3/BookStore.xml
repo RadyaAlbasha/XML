@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BookStore
+
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.example.org/BookStoreSchema"
+    xsi:schemaLocation="http://www.example.org/BookStoreSchema BookStoreSchema.xsd"
+
+>
+	
+	<Book>
+		<Title>Title</Title>
+		
+		<Author>Author</Author>
+		
+		<Date>Date</Date>
+		
+		<ISBN>ISBN</ISBN>
+		
+		<Publisher>Publisher</Publisher>
+	</Book>
+	
+</BookStore>

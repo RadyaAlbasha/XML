@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<library location="Nasr city" description="$my_description;" librarian="Mnal"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns="http://www.example.org/librarySchema"
+		xs:schemaLocation="http://www.example.org/librarySchema librarySchema.xsd">
+    <books>
+        <book title="meki" ISBN="1997" Author="radya">
+            <preface>preface</preface>
+            <parts>
+                <part title="" summary="">
+                    <sections>
+                        <section>
+                            <content>
+                                paragraph
+                            </content>
+                        </section>
+                    </sections>
+                </part>
+            </parts>
+        </book>
+    </books>
+</library>

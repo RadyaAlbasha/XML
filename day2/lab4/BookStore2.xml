@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BookStore
+
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.example.org/BookStoreSchema2"
+    xsi:schemaLocation="http://www.example.org/BookStoreSchema2 BookStoreSchema2.xsd"
+
+>
+	
+	<Book Category="science" InStock="true">
+		<Title>Title</Title>
+		
+		<Author>Author</Author>
+	</Book>
+	
+</BookStore>

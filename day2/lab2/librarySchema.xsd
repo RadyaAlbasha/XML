@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		targetNamespace="http://www.example.org/librarySchema"
+		xmlns="http://www.example.org/librarySchema"
+		elementFormDefault="qualified">
+	
+	
+	<xs:element name="library" type="libraryType"/>
+	
+	<xs:simpleType name="contentType">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="sectionType">
+		<xs:sequence>
+			<xs:element name="content" type="contentType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence> 
+	</xs:complexType>
+	
+	<xs:complexType name="sectionsType">
+		<xs:sequence>
+			<xs:element name="section" type="sectionType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence> 
+	</xs:complexType>
+	
+	<xs:complexType name="partType">
+		<xs:sequence>
+			<xs:element name="sections" type="sectionsType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence> 
+		<xs:attribute name="title" type="xs:string" use="required" />
+		<xs:attribute name="summary" type="xs:string" use="required" /> 
+	</xs:complexType>
+	
+	<xs:complexType name="partsType">
+		<xs:sequence>
+			<xs:element name="part" type="partType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="prefaceType">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="bookType">
+		<xs:sequence>
+			<xs:element name="preface" type="prefaceType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="parts" type="partsType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="title" type="xs:string" use="required" />
+		<xs:attribute name="ISBN" type="xs:string" use="required" /> 
+		<xs:attribute name="Author" type="xs:string" use="required" />  
+	</xs:complexType>
+	
+	<xs:complexType name="booksType">
+		<xs:sequence>
+			<xs:element name="book" type="bookType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence> 
+	</xs:complexType>
+	
+	<xs:complexType name="libraryType">
+		<xs:sequence>
+			<xs:element name="books" type="booksType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence> 
+		<xs:attribute name="location" type="xs:string" use="required" />
+		<xs:attribute name="description" type="xs:string" use="required" /> 
+		<xs:attribute name="librarian" type="xs:string" use="required" />
+	</xs:complexType>
+		
+</xs:schema>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+			targetNamespace="http://www.example.org/BookStoreSchema2"
+			xmlns="http://www.example.org/BookStoreSchema2" 
+			xmlns:tns="http://www.example.org/BookStoreSchema2"
+			elementFormDefault="qualified">
+	
+	<xs:complexType name="bookType">
+		<xs:sequence>
+			<xs:element name="Title" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Author" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="Category" type="categoryType" default="fiction"/>
+    	<xs:attribute name="InStock" type="inStockType" default="false"/> 
+    </xs:complexType>
+    
+    <xs:simpleType name="categoryType">
+    	<xs:restriction base="xs:string">
+    		<xs:enumeration value="science"/>
+    		<xs:enumeration value="fiction"/>
+    	</xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="inStockType">
+    	<xs:restriction base="xs:string">
+    		<xs:enumeration value="true"/>
+    		<xs:enumeration value="false"/>
+    	</xs:restriction>
+    </xs:simpleType>
+    
+    <xs:element name="BookStore">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Book"  type="bookType" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	
+</xs:schema>
